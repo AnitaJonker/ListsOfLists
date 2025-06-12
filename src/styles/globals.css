@@ -4,3 +4,15 @@
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+#header-image{
+  @apply w-full h-150 object-cover object-center ;
+}
+
+.dot {
+  height: 200px;
+  width: 200px;
+  background-color: hotpink;
+  border-radius: 50%;
+  display: inline-block;
+}

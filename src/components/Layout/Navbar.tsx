@@ -4,6 +4,7 @@ const NavbarNames = [
   { SiteName: "Home", url: "/" },
   { SiteName: "Random", url: "/Random" },
   { SiteName: "Instagram", url: "/Instagram" },
+  { SiteName: "HTML1", url: "/HTML1" },
 ];
 
 const Navbar = () => {
