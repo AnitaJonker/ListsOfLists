@@ -8,8 +8,10 @@ const Profile = () => {
     <>
       <div className="flex gap-10">
         <div>
-          <div className="dot relative">
-            <label className="absolute top-20 left-20">Circle</label>
+          <div className="first-border">
+            <div className="dot relative">
+              <label className="absolute">Circle</label>
+            </div>
           </div>
         </div>
         <div className="flex flex-col gap-5">
@@ -28,6 +30,20 @@ const Profile = () => {
             </span>
           </div>
         </div>
+      </div>
+      <div className="relative h-[200px] w-[200px] overflow-hidden rounded-full bg-pink-500">
+        <div className="absolute top-0 left-0 h-1/2 w-full bg-black"></div>
+        <div className="flex h-full w-full items-center justify-center font-bold text-white">
+          Circle
+        </div>
+      </div>
+      <div className="relative h-[200px] w-[200px] overflow-hidden rounded-full border-t-[20px] border-black bg-pink-500">
+        <div className="flex h-full w-full items-center justify-center font-bold text-white">
+          Circle
+        </div>
+      </div>
+      <div className="profile-photo-wrapper h-full w-full rounded-full">
+        <Image src={friends} alt="Profile Image" />
       </div>
     </>
   );

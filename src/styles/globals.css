@@ -1,18 +1,126 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
+  --font-sans:
+    var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-#header-image{
-  @apply w-full h-150 object-cover object-center ;
+#header-image {
+  @apply h-150 w-full object-cover object-center;
 }
 
 .dot {
-  height: 200px;
-  width: 200px;
   background-color: hotpink;
+  transform: rotate(-45deg);
+  @apply flex h-full w-full items-center justify-center rounded-full text-center;
+}
+
+/* .first-border {
+  position: relative;
+  transform: rotate(45deg);
+  @apply h-[168px] w-[168px] overflow-hidden rounded-full border-[4px] border-solid border-transparent border-t-[#72657f] border-r-[#72657f] p-5;
+} */
+
+.first-border {
+  position: relative;
+  width: 168px;
+  height: 168px;
   border-radius: 50%;
-  display: inline-block;
+  border-top: 4px solid #72657f;
+  border-right: 4px solid #72657f;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
+  transform: rotate(45deg);
+  overflow: visible; /* Allow dots to show outside */
+  @apply p-5;
+}
+
+.first-border::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #72657f;
+  border-radius: 50%;
+  top: 30px;
+  left: 15px;
+  z-index: 3;
+  /* transform: translateY(-50%); */
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 4px #72657f;
+}
+
+.first-border::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #72657f;
+  border-radius: 50%;
+  bottom: 10px;
+  right: 25px;
+  z-index: 3;
+  /* transform: translateY(-50%); */
+  /* transform: translate(-50%, -50%); */
+  box-shadow: 0 0 4px #72657f;
+}
+
+/* .first-border::before {
+  content: "";
+  position: absolute;
+  width: 15px; /* size of the dot 
+  height: 15px;
+  color: aqua;
+  background: #000;
+  border-radius: 50%;
+  z-index: 3;
+} */
+
+/* .second-border {
+  @apply h-[200px] w-[200px] rounded-full border-l-5 border-stone-500;
+} */
+
+/* .inner-circle {
+  @apply flex h-full w-full items-center justify-center rounded-full bg-pink-500 text-center;
+} */
+
+.profile-photo-wrapper {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 40px; /* just for spacing */
+}
+
+/* Left pink arc */
+.profile-photo-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -8px; /* expands beyond image */
+  left: -8px;
+  width: 176px; /* 160 + 16 */
+  height: 176px;
+  border-radius: 50%;
+  border: 6px solid transparent; /* invisible border */
+  border-left-color: #eeb5b9; /* pink color */
+  border-bottom-color: #eeb5b9; /* pink color */
+  z-index: 3;
+  /* Rotating to place arcs correctly */
+  transform: rotate(-45deg);
+}
+
+/* Right purple arc */
+.profile-photo-wrapper::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  border-top-color: #72657f;
+  border-right-color: #72657f;
+  z-index: 3;
+  transform: rotate(45deg);
 }
